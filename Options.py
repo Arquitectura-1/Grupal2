@@ -106,7 +106,7 @@ def addNoISAOptions(parser):
     parser.add_option("--mem-ranks", type="int", default=None,
                       help = "number of memory ranks per channel")
     parser.add_option("--mem-size", action="store", type="string",
-                      default="512MB",
+                      default="4096MB",
                       help="Specify the physical memory size (single memory)")
     parser.add_option("--enable-dram-powerdown", action="store_true",
                        help="Enable low-power states in DRAMCtrl")
@@ -127,7 +127,11 @@ def addNoISAOptions(parser):
     parser.add_option("--num-l2caches", type="int", default=1)
     parser.add_option("--num-l3caches", type="int", default=1)
     parser.add_option("--l1d_size", type="string", default="64kB")
+    parser.add_option("--l1d_rlatency", type="int", default=23)
+    parser.add_option("--l1d_poli", type="string", default="FIFORP()", help= "name of the replacement policy")
     parser.add_option("--l1i_size", type="string", default="32kB")
+    parser.add_option("--l1i_rlatency", type="int", default=23)
+    parser.add_option("--l1i_poli", type="string", default="FIFORP()", help= "name of the replacement policy")
     parser.add_option("--l2_size", type="string", default="2MB")
     parser.add_option("--l3_size", type="string", default="16MB")
     parser.add_option("--l1d_assoc", type="int", default=2)
@@ -213,7 +217,7 @@ def addCommonOptions(parser):
                       the selected cache)""")
     parser.add_option("--checker", action="store_true");
     parser.add_option("--cpu-clock", action="store", type="string",
-                      default='2GHz',
+                      default='3GHz',
                       help="Clock for blocks running at CPU speed")
     parser.add_option("--smt", action="store_true", default=False,
                       help = """
