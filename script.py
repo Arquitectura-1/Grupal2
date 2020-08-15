@@ -11,54 +11,54 @@ sjengRoute = "/home/bryan/Project1_SPEC/458.sjeng"
 '''
 #CPU 0, Base
 os.system("echo benhmarks cpu1")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu0/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64  --bp-type=BiModeBP")
 
 #CPU 1, implementa prefetcher
 os.system("echo benhmarks cpu1")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu1/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2-hwp-type=BOPPrefetcher --bp-type=BiModeBP")
 
 #CPU 2, Implementa politica de reemplazo
 os.system("echo benhmarks cpu2")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\" --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\" --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\" --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\" --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\" --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\"  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\"  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\"  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\"  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu2/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_poli=\"WeightedLRURP()\" --l1d_poli=\"WeightedLRURP()\" --l1i_poli=\"WeightedLRURP()\"  --bp-type=BiModeBP")
 
 #CPU 3, Latencia
 os.system("echo benhmarks cpu3")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_rlatency=10 --l1d_rlatency=10 --l1i_rlatency=10 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_rlatency=10 --l1d_rlatency=10 --l1i_rlatency=10 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_rlatency=10 --l1d_rlatency=10 --l1i_rlatency=10 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_rlatency=10 --l1d_rlatency=10 --l1i_rlatency=10 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_rlatency=10 --l1d_rlatency=10 --l1i_rlatency=10 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_tlatency=10 --l1d_tlatency=10 --l1i_tlatency=10  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_tlatency=10 --l1d_tlatency=10 --l1i_tlatency=10  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_tlatency=10 --l1d_tlatency=10 --l1i_tlatency=10  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_tlatency=10 --l1d_tlatency=10 --l1i_tlatency=10  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu3/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --l2_tlatency=10 --l1d_tlatency=10 --l1i_tlatency=10  --bp-type=BiModeBP")
 
 #CPU 4, Incrementa el grado de asociatividad
 os.system("echo benhmarks cpu4")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64 --l2-hwp-type=SignaturePathPrefetcher --bp-type=BiModeBP")
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64  --bp-type=BiModeBP")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu4/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=8 --cacheline_size=64  --bp-type=BiModeBP")
 
 #CPU 5, Implementa un branch predictor
 os.system("echo benhmarks cpu5")
-os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB --l2-hwp-type=SignaturePathPrefetcher")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB --l2-hwp-type=SignaturePathPrefetcher")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB --l2-hwp-type=SignaturePathPrefetcher")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB --l2-hwp-type=SignaturePathPrefetcher")
-os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=128kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB --l2-hwp-type=SignaturePathPrefetcher")
-
-
+os.system("sudo sudo timeout --signal=SIGINT 110s ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b1 ./gem5/configs/example/se.py -c "+sjengRoute+"/src/benchmark --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB ")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b2 ./gem5/configs/example/se.py -c "+benchRoute+"/BFS --options="+ "\"-o test.txt -r 10 "+benchRoute+"/inputs/RL3k.graph\" " +"--cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB ")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b3 ./gem5/configs/example/se.py -c "+benchRoute+"/blocked-matmul --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB ")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b4 ./gem5/configs/example/se.py -c "+benchRoute+"/sha --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB ")
+os.system("sudo ./gem5/build/X86/gem5.opt -d "+outRoute+"/cpu5/b5 ./gem5/configs/example/se.py -c "+benchRoute+"/queens --options="+"\"-c 10\" --cpu-type=AtomicSimpleCPU --caches --l2cache --l1d_size=1kB --l1i_size=1kB --l2_size=1kB --l1d_assoc=2 --l1i_assoc=2 --l2_assoc=2 --cacheline_size=64 --bp-type=MultiperspectivePerceptronTAGE64KB ")
 '''
+
+
 ##Apartado de graficas
 valores0 =[]
 def graph():
@@ -179,17 +179,17 @@ def graph():
     #fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(100,100))
     #plt.subplots_adjust(left=0.03, bottom=0.327, right=0.977, hspace=0.88)
 
-    df = pd.DataFrame([['CPU0','BranchMisses.',valores0[1]],['CPU0','CL1 d misses.',valores0[2]],
+    df = pd.DataFrame([['CPU0','Time (ticks)',valores0[0]],['CPU0','BranchMisses.',valores0[1]],['CPU0','CL1 d misses.',valores0[2]],
                        ['CPU0','CL1 i misses.',valores0[3]],['CPU0','CL2 misses',valores0[4]],['CPU0','RAM reads',valores0[5]],
-                       ['CPU1','BranchMisses.',valores[1]],['CPU1','CL1 d misses.',valores[2]],
+                       ['CPU1','Time (ticks)',valores[0]],['CPU1','BranchMisses.',valores[1]],['CPU1','CL1 d misses.',valores[2]],
                        ['CPU1','CL1 i misses.',valores[3]],['CPU1','CL2 misses',valores[4]],['CPU1','RAM reads',valores[5]],
-                       ['CPU2','BranchMisses.',valores2[1]],['CPU2','CL1 d misses.',valores2[2]],
+                       ['CPU2','Time (ticks)',valores2[0]],['CPU2','BranchMisses.',valores2[1]],['CPU2','CL1 d misses.',valores2[2]],
                        ['CPU2','CL1 i misses.',valores2[3]], ['CPU2','CL2 misses',valores2[4]],['CPU2','RAM reads',valores2[5]],
-                       ['CPU3','BranchMisses.',valores3[1]],['CPU3','CL1 d misses.',valores3[2]],
+                       ['CPU3','Time (ticks)',valores3[0]],['CPU3','BranchMisses.',valores3[1]],['CPU3','CL1 d misses.',valores3[2]],
                        ['CPU3','CL1 i misses.',valores3[3]],['CPU3','CL2 misses',valores3[4]],['CPU3','RAM reads',valores3[5]],
-                       ['CPU4','BranchMisses.',valores4[1]],['CPU4','CL1 d misses.',valores4[2]],
+                       ['CPU4','Time (ticks)',valores4[0]],['CPU4','BranchMisses.',valores4[1]],['CPU4','CL1 d misses.',valores4[2]],
                        ['CPU4','CL1 i misses.',valores4[3]],['CPU4','CL2 misses',valores4[4]],['CPU4','RAM reads',valores4[5]],
-                       ['CPU5','BranchMisses.',valores5[1]],['CPU5','CL1 d misses.',valores5[2]],
+                       ['CPU5','Time (ticks)',valores5[0]],['CPU5','BranchMisses.',valores5[1]],['CPU5','CL1 d misses.',valores5[2]],
                        ['CPU5','CL1 i misses.',valores5[3]],['CPU5','CL2 misses',valores5[4]],['CPU5','RAM reads',valores5[5]],
                        ], columns=['CPU','Sjeng','val'])
 
@@ -305,17 +305,17 @@ def graph():
                 valores25.append(math.log10(int(columna[1])))
     
 
-    df2 = pd.DataFrame([['CPU0','BranchMisses.',valores20[1]],['CPU0','CL1 d misses.',valores20[2]],
+    df2 = pd.DataFrame([['CPU0','Time (ticks)',valores20[0]],['CPU0','BranchMisses.',valores20[1]],['CPU0','CL1 d misses.',valores20[2]],
                        ['CPU0','CL1 i misses.',valores20[3]],['CPU0','CL2 misses',valores20[4]],['CPU0','RAM reads',valores20[5]],
-                       ['CPU1','BranchMisses.',valores21[1]],['CPU1','CL1 d misses.',valores21[2]],
+                       ['CPU1','Time (ticks)',valores21[0]],['CPU1','BranchMisses.',valores21[1]],['CPU1','CL1 d misses.',valores21[2]],
                        ['CPU1','CL1 i misses.',valores21[3]],['CPU1','CL2 misses',valores21[4]],['CPU1','RAM reads',valores21[5]],
-                       ['CPU2','BranchMisses.',valores22[1]],['CPU2','CL1 d misses.',valores22[2]],
+                       ['CPU2','Time (ticks)',valores22[0]],['CPU2','BranchMisses.',valores22[1]],['CPU2','CL1 d misses.',valores22[2]],
                        ['CPU2','CL1 i misses.',valores22[3]], ['CPU2','CL2 misses',valores22[4]],['CPU2','RAM reads',valores22[5]],
-                       ['CPU3','BranchMisses.',valores23[1]],['CPU3','CL1 d misses.',valores23[2]],
+                       ['CPU3','Time (ticks)',valores23[0]],['CPU3','BranchMisses.',valores23[1]],['CPU3','CL1 d misses.',valores23[2]],
                        ['CPU3','CL1 i misses.',valores23[3]],['CPU3','CL2 misses',valores23[4]],['CPU3','RAM reads',valores23[5]],
-                       ['CPU4','BranchMisses.',valores24[1]],['CPU4','CL1 d misses.',valores24[2]],
+                       ['CPU4','Time (ticks)',valores24[0]],['CPU4','BranchMisses.',valores24[1]],['CPU4','CL1 d misses.',valores24[2]],
                        ['CPU4','CL1 i misses.',valores24[3]],['CPU4','CL2 misses',valores24[4]],['CPU4','RAM reads',valores24[5]],
-                       ['CPU5','BranchMisses.',valores25[1]],['CPU5','CL1 d misses.',valores25[2]],
+                       ['CPU5','Time (ticks)',valores25[0]],['CPU5','BranchMisses.',valores25[1]],['CPU5','CL1 d misses.',valores25[2]],
                        ['CPU5','CL1 i misses.',valores25[3]],['CPU5','CL2 misses',valores25[4]],['CPU5','RAM reads',valores25[5]],
                        ], columns=['CPU','BFS','val'])
 
@@ -431,17 +431,17 @@ def graph():
                 valores35.append(math.log10(int(columna[1])))
     
 
-    df3 = pd.DataFrame([['CPU0','BranchMisses.',valores30[1]],['CPU0','CL1 d misses.',valores30[2]],
+    df3 = pd.DataFrame([['CPU0','Time (ticks)',valores30[0]],['CPU0','BranchMisses.',valores30[1]],['CPU0','CL1 d misses.',valores30[2]],
                        ['CPU0','CL1 i misses.',valores30[3]],['CPU0','CL2 misses',valores30[4]],['CPU0','RAM reads',valores30[5]],
-                       ['CPU1','BranchMisses.',valores31[1]],['CPU1','CL1 d misses.',valores31[2]],
+                       ['CPU1','Time (ticks)',valores31[0]],['CPU1','BranchMisses.',valores31[1]],['CPU1','CL1 d misses.',valores31[2]],
                        ['CPU1','CL1 i misses.',valores31[3]],['CPU1','CL2 misses',valores31[4]],['CPU1','RAM reads',valores31[5]],
-                       ['CPU2','BranchMisses.',valores32[1]],['CPU2','CL1 d misses.',valores32[2]],
+                       ['CPU2','Time (ticks)',valores32[0]],['CPU2','BranchMisses.',valores32[1]],['CPU2','CL1 d misses.',valores32[2]],
                        ['CPU2','CL1 i misses.',valores32[3]], ['CPU2','CL2 misses',valores32[4]],['CPU2','RAM reads',valores32[5]],
-                       ['CPU3','BranchMisses.',valores33[1]],['CPU3','CL1 d misses.',valores33[2]],
+                       ['CPU3','Time (ticks)',valores33[0]],['CPU3','BranchMisses.',valores33[1]],['CPU3','CL1 d misses.',valores33[2]],
                        ['CPU3','CL1 i misses.',valores33[3]],['CPU3','CL2 misses',valores33[4]],['CPU3','RAM reads',valores33[5]],
-                       ['CPU4','BranchMisses.',valores34[1]],['CPU4','CL1 d misses.',valores34[2]],
+                       ['CPU4','Time (ticks)',valores34[0]],['CPU4','BranchMisses.',valores34[1]],['CPU4','CL1 d misses.',valores34[2]],
                        ['CPU4','CL1 i misses.',valores34[3]],['CPU4','CL2 misses',valores34[4]],['CPU4','RAM reads',valores34[5]],
-                       ['CPU5','BranchMisses.',valores35[1]],['CPU5','CL1 d misses.',valores35[2]],
+                       ['CPU5','Time (ticks)',valores35[0]],['CPU5','BranchMisses.',valores35[1]],['CPU5','CL1 d misses.',valores35[2]],
                        ['CPU5','CL1 i misses.',valores35[3]],['CPU5','CL2 misses',valores35[4]],['CPU5','RAM reads',valores35[5]],
                        ], columns=['CPU','BlockMul','val'])
 
@@ -558,17 +558,17 @@ def graph():
                 valores45.append(math.log10(int(columna[1])))
     
 
-    df4 = pd.DataFrame([['CPU0','BranchMisses.',valores40[1]],['CPU0','CL1 d misses.',valores40[2]],
+    df4 = pd.DataFrame([['CPU0','Time (ticks)',valores40[0]],['CPU0','BranchMisses.',valores40[1]],['CPU0','CL1 d misses.',valores40[2]],
                        ['CPU0','CL1 i misses.',valores40[3]],['CPU0','CL2 misses',valores40[4]],['CPU0','RAM reads',valores40[5]],
-                       ['CPU1','BranchMisses.',valores41[1]],['CPU1','CL1 d misses.',valores41[2]],
+                       ['CPU1','Time (ticks)',valores41[0]],['CPU1','BranchMisses.',valores41[1]],['CPU1','CL1 d misses.',valores41[2]],
                        ['CPU1','CL1 i misses.',valores41[3]],['CPU1','CL2 misses',valores41[4]],['CPU1','RAM reads',valores41[5]],
-                       ['CPU2','BranchMisses.',valores42[1]],['CPU2','CL1 d misses.',valores42[2]],
+                       ['CPU2','Time (ticks)',valores42[0]],['CPU2','BranchMisses.',valores42[1]],['CPU2','CL1 d misses.',valores42[2]],
                        ['CPU2','CL1 i misses.',valores42[3]], ['CPU2','CL2 misses',valores42[4]],['CPU2','RAM reads',valores42[5]],
-                       ['CPU3','BranchMisses.',valores43[1]],['CPU3','CL1 d misses.',valores43[2]],
+                       ['CPU3','Time (ticks)',valores43[0]],['CPU3','BranchMisses.',valores43[1]],['CPU3','CL1 d misses.',valores43[2]],
                        ['CPU3','CL1 i misses.',valores43[3]],['CPU3','CL2 misses',valores43[4]],['CPU3','RAM reads',valores43[5]],
-                       ['CPU4','BranchMisses.',valores44[1]],['CPU4','CL1 d misses.',valores44[2]],
+                       ['CPU4','Time (ticks)',valores44[0]],['CPU4','BranchMisses.',valores44[1]],['CPU4','CL1 d misses.',valores44[2]],
                        ['CPU4','CL1 i misses.',valores44[3]],['CPU4','CL2 misses',valores44[4]],['CPU4','RAM reads',valores44[5]],
-                       ['CPU5','BranchMisses.',valores45[1]],['CPU5','CL1 d misses.',valores45[2]],
+                       ['CPU5','Time (ticks)',valores45[0]],['CPU5','BranchMisses.',valores45[1]],['CPU5','CL1 d misses.',valores45[2]],
                        ['CPU5','CL1 i misses.',valores45[3]],['CPU5','CL2 misses',valores45[4]],['CPU5','RAM reads',valores45[5]],
                        ], columns=['CPU','SHA','val'])
 
@@ -684,23 +684,23 @@ def graph():
                 valores55.append(math.log10(int(columna[1])))
     
 
-    df5 = pd.DataFrame([['CPU0','BranchMisses.',valores50[1]],['CPU0','CL1 d misses.',valores50[2]],
+    df5 = pd.DataFrame([['CPU0','Time (ticks)',valores50[0]],['CPU0','BranchMisses.',valores50[1]],['CPU0','CL1 d misses.',valores50[2]],
                        ['CPU0','CL1 i misses.',valores50[3]],['CPU0','CL2 misses',valores50[4]],['CPU0','RAM reads',valores50[5]],
-                       ['CPU1','BranchMisses.',valores51[1]],['CPU1','CL1 d misses.',valores51[2]],
+                       ['CPU1','Time (ticks)',valores51[0]],['CPU1','BranchMisses.',valores51[1]],['CPU1','CL1 d misses.',valores51[2]],
                        ['CPU1','CL1 i misses.',valores51[3]],['CPU1','CL2 misses',valores51[4]],['CPU1','RAM reads',valores51[5]],
-                       ['CPU2','BranchMisses.',valores52[1]],['CPU2','CL1 d misses.',valores52[2]],
+                       ['CPU2','Time (ticks)',valores52[0]],['CPU2','BranchMisses.',valores52[1]],['CPU2','CL1 d misses.',valores52[2]],
                        ['CPU2','CL1 i misses.',valores52[3]], ['CPU2','CL2 misses',valores52[4]],['CPU2','RAM reads',valores52[5]],
-                       ['CPU3','BranchMisses.',valores53[1]],['CPU3','CL1 d misses.',valores53[2]],
+                       ['CPU3','Time (ticks)',valores53[0]],['CPU3','BranchMisses.',valores53[1]],['CPU3','CL1 d misses.',valores53[2]],
                        ['CPU3','CL1 i misses.',valores53[3]],['CPU3','CL2 misses',valores53[4]],['CPU3','RAM reads',valores53[5]],
-                       ['CPU4','BranchMisses.',valores54[1]],['CPU4','CL1 d misses.',valores54[2]],
+                       ['CPU4','Time (ticks)',valores54[0]],['CPU4','BranchMisses.',valores54[1]],['CPU4','CL1 d misses.',valores54[2]],
                        ['CPU4','CL1 i misses.',valores54[3]],['CPU4','CL2 misses',valores54[4]],['CPU4','RAM reads',valores54[5]],
-                       ['CPU5','BranchMisses.',valores55[1]],['CPU5','CL1 d misses.',valores55[2]],
+                       ['CPU5','Time (ticks)',valores55[0]],['CPU5','BranchMisses.',valores55[1]],['CPU5','CL1 d misses.',valores55[2]],
                        ['CPU5','CL1 i misses.',valores55[3]],['CPU5','CL2 misses',valores55[4]],['CPU5','RAM reads',valores55[5]],
                        ], columns=['CPU','Queens','val'])
 
     df5.pivot("Queens", "CPU", "val").plot(kind='barh')    
     plt.show()
-    
+
 graph()
 
 
