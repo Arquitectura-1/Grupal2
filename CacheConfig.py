@@ -101,7 +101,7 @@ def config_cache(options, system):
                                    size=options.l2_size,
                                    assoc=options.l2_assoc,
                                    replacement_policy=eval(options.l2_poli),
-                                   response_latency= options.l2_rlatency)
+                                   tag_latency= options.l2_tlatency)
 
         system.tol2bus = L2XBar(clk_domain = system.cpu_clk_domain)
         system.l2.cpu_side = system.tol2bus.master
@@ -123,11 +123,11 @@ def config_cache(options, system):
             icache = icache_class(size=options.l1i_size,
                                   assoc=options.l1i_assoc,
                                   replacement_policy=eval(options.l1i_poli),
-                                   response_latency= options.l1i_rlatency)
+                                   tag_latency= options.l1i_tlatency)
             dcache = dcache_class(size=options.l1d_size,
                                   assoc=options.l1d_assoc,
                                   replacement_policy=eval(options.l1d_poli),
-                                  response_latency= options.l1d_rlatency)
+                                  tag_latency= options.l1d_tlatency)
 
             # If we have a walker cache specified, instantiate two
             # instances here
